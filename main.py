@@ -126,7 +126,7 @@ def main():
 
     input_data_tc = {
 
-    'd20(Kg/m3)': [encodedd20]
+    'd20(Kg/m3)': [encodedd20],
     'n20': [encodedn20],
     'Tb(K)': [encodedTb],
     'MM(g/mole)': [encodedMM],
