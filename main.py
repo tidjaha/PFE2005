@@ -117,7 +117,7 @@ def main():
     
 
     nbC=st.number_input("nombre de carbone", min_value=1)
-    encodednbH,encodednbC=scaler_pc_nbHnbC.transform((([[nbH]])[0][0]),([[nbC]])[0][0]))
+    encodednbH,encodednbC=scaler_pc_nbHnbC.transform((([[nbH]])[0][0]),(([[nbC]])[0][0]))
     
 
     famille=st.selectbox("choisir la famille de votre corps",["famille_aromatiques","famille_i-paraffines","famille_n-paraffines","famille_naphtènes","famille_oléfines", "famille_alcynes"])
