@@ -114,10 +114,10 @@ def main():
     encodedMM=scaler_tc_MM.transform([[MM]])[0][0]
 
     nbH=st.number_input("nombre d'hydrogène", min_value=1)
-    encodednbH=scaler_tc_ncnh.transform([[nbH]])[0][0]
+    encodednbH=scaler_pc_nbHnbC.transform([[nbH]])[0][0]
 
     nbC=st.number_input("nombre de carbone", min_value=1)
-    encodednbC=scaler_tc_ncnh.transform([[nbC]])[0][0]
+    encodednbC=scaler_pc_nbHnbC.transform([[nbC]])[0][0]
 
     famille=st.selectbox("choisir la famille de votre corps",["famille_aromatiques","famille_i-paraffines","famille_n-paraffines","famille_naphtènes","famille_oléfines", "famille_alcynes"])
     
