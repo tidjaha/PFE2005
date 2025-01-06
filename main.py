@@ -39,7 +39,7 @@ scaler_pc_pc=joblib.load("scaler(Pc) pc.pkl")
 
 
 poly_vc =joblib.load("scaler model vc.pkl")
-model_LR_vc_n2=joblib.load("model(vc).pkl")
+model_LR_vc_n2=joblib.load("model_LR_n2_vc.pkl")
 
 scaler_vc_tb=joblib.load("scaler(Vc) tb.pkl")
 scaler_vc_tc=joblib.load("scaler(Vc) tc.pkl")
@@ -48,6 +48,7 @@ scaler_vc_d20=joblib.load("scaler(Vc) d20.pkl")
 scaler_vc_n20=joblib.load("scaler(Vc) n20.pkl")
 scaler_vc_nbHnbC=joblib.load("scaler(Vc) nbHnbC.pkl")
 scaler_vc_vc=joblib.load("scaler(Vc) vc.pkl")
+scaler_vc_pc=joblib.load("scaler(Vc) pc.pkl")
 
 model_LR_Cp = joblib.load("model_LR_Cp.pkl")
 
