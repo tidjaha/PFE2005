@@ -117,7 +117,7 @@ def main():
     
 
     nbC=st.number_input("nombre de carbone", min_value=1)
-    data_to_transform = [[nbH], [nbC]]
+    data_to_transform = [[nbH, nbC]]
 
     # Appliquez la transformation
     transformed_data = scaler_pc_nbHnbC.transform(data_to_transform)
