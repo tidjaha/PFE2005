@@ -123,7 +123,7 @@ def main():
     transformed_data = scaler_pc_nbHnbC.transform(data_to_transform)
 
     # Récupérez les valeurs transformées
-    encodednbH, encodednbC = transformed_data[0][0], transformed_data[1][0]
+    encodednbH, encodednbC = transformed_data[0][0], transformed_data[0][1]
     
 
     famille=st.selectbox("choisir la famille de votre corps",["famille_aromatiques","famille_i-paraffines","famille_n-paraffines","famille_naphtènes","famille_oléfines", "famille_alcynes"])
