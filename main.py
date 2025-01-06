@@ -38,7 +38,7 @@ scaler_pc_nbHnbC=joblib.load("scaler(Pc) nbHnbC.pkl")
 scaler_pc_pc=joblib.load("scaler(Pc) pc.pkl")
 
 
-poly_vc =joblib.load("model scaler(Vc).pkl")
+poly_vc =joblib.load("scaler model vc.pkl")
 model_LR_vc_n2=joblib.load("model(vc).pkl")
 
 scaler_vc_tb=joblib.load("scaler(Vc) tb.pkl")
