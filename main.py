@@ -74,7 +74,7 @@ def predict_tc(input_features_tc):
     # Make predictions using the loaded model
 
     poly_tc = poly_tc.transform(input_features_tc)
-    input_features_tc[""Tc(K)""] = model_LR_n2_tc.predict(poly_tc)
+    input_features_tc["Tc(K)"] = model_LR_n2_tc.predict(poly_tc)
     prediction=scaler_tc_tc.inverse_transform(input_features_tc[""Tc(K)""].reshape(-1, 1))
 
     # Return the predictions
