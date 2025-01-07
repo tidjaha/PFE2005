@@ -214,10 +214,10 @@ def main():
     transformed_data_pc = scaler_pc_nbHnbC.transform(data_to_transform_pc)
 
     # Récupérez les valeurs transformées
-    encodednbH, encodednbC = transformed_data_pc[0][0], transformed_data_pc[0][1]
+    encodednbH_pc, encodednbC_pc = transformed_data_pc[0][0], transformed_data_pc[0][1]
 
 
-    famille=st.selectbox("choisir la famille de votre corps",["aromatiques","i-paraffines","n-paraffines","naphtènes","oléfines", "alcynes"])
+    
 
         # Add more input fields as needed
 
@@ -225,13 +225,13 @@ def main():
 
     input_data_pc = {
 
-    'd20(Kg/m3)': [encodedd20],
-    'n20': [encodedn20],
-    'Tb(K)': [encodedTb],
-    'MM(g/mole)': [encodedMM],
+    'd20(Kg/m3)': [encodedd20_pc],
+    'n20': [encodedn20_pc],
+    'Tb(K)': [encodedTb_pc],
+    'MM(g/mole)': [encodedMM_pc],
     'famille': [famille],
-    'nbH': [encodednbH],
-    'nbC': [encodednbC],
+    'nbH': [encodednbH_pc],
+    'nbC': [encodednbC_pc],
     'Tc(K)':[0]
 
 }
