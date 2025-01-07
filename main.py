@@ -103,16 +103,16 @@ def main():
     
     # Create input fields for user to enter data tc
 
-    d20=st.number_input("densité à 20°C", min_value=0.0)
+    d20=st.number_input("densité à 20°C", min_value=0.0, format="%.3f")
     encodedd20=scaler_tc_d420.transform([[d20]])[0][0]
     
-    n20=st.number_input("indice de refraction à 20°C", min_value=0.0)
+    n20=st.number_input("indice de refraction à 20°C", min_value=0.0, format="%.3f")
     encodedn20=scaler_tc_n20.transform([[n20]])[0][0]
 
     Tb=st.number_input("Température d'ébullition en °K")
     encodedTb=scaler_tc_tb.transform([[Tb]])[0][0]
 
-    MM=st.number_input("masse molaire en g/mol", min_value=0.0)
+    MM=st.number_input("masse molaire en g/mol", min_value=0.0, format="%.4f")
     encodedMM=scaler_tc_MM.transform([[MM]])[0][0]
 
     nbH=st.number_input("nombre d'hydrogène", min_value=1)
