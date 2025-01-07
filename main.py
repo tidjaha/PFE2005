@@ -76,6 +76,7 @@ def predict_tc(input_features_tc):
 
     poly = poly_tc.transform(input_features_tc)
     input_features_tc["Tc(K)"] = model_LR_n2_tc.predict(poly)
+    st.write(input_features_tc)
     test=input_features_tc[["Tc(K)"]].values.reshape(-1, 1)
     prediction=scaler_tc_tc.inverse_transform(test)
 
