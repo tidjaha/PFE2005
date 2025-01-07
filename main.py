@@ -147,7 +147,7 @@ def main():
     encodednbH, encodednbC = transformed_data[0][0], transformed_data[0][1]
 
 
-    famille=st.selectbox("choisir la famille de votre corps",["aromatiques","i-paraffines","n-paraffines","naphtènes","oléfines", "famille_alcynes"])
+    famille=st.selectbox("choisir la famille de votre corps",["aromatiques","i-paraffines","n-paraffines","naphtènes","oléfines", "alcynes"])
 
         # Add more input fields as needed
 
@@ -217,7 +217,7 @@ def main():
     encodednbH, encodednbC = transformed_data_pc[0][0], transformed_data_pc[0][1]
 
 
-    famille=st.selectbox("choisir la famille de votre corps",["aromatiques","i-paraffines","n-paraffines","naphtènes","oléfines", "famille_alcynes"])
+    famille=st.selectbox("choisir la famille de votre corps",["aromatiques","i-paraffines","n-paraffines","naphtènes","oléfines", "alcynes"])
 
         # Add more input fields as needed
 
