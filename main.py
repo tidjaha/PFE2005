@@ -25,7 +25,7 @@ scaler_tc_n20=joblib.load("scaler(Tc) n20.pkl")
 scaler_tc_ncnh=joblib.load("scaler(Tc) ncnh.pkl")
 
 
-model_RF_pc=joblib.load("model_RF_pc.pkl")  
+model_RF_pc=joblib.load("model_RF_pc.pkl")
 
 
 
@@ -90,7 +90,26 @@ def predict_tc(input_features_tc):
     #ax.legend()
     #ax.set_ylabel('Notes')
     #plot=st.pyplot(fig)
+
+
+ #fonction pour le calcul de Pc:
+
+    def predict_pc(input_features_pc,vpc):
+
+    # Perform any necessary preprocessing on the input_features
+
+    # Make predictions using the loaded model
+
     
+    input_features_pc["Tc(K)"] = vpc
+    st.write(input_features_pc)
+    input_features_pc["Pc(bar)"] = model_RF_pc.predict(input_features_pc)
+    test_pc=input_features_pc[["Pc(bars)"]].values.reshape(-1, 1)
+    pred=scaler_pc_pc.inverse_transform(test_pc)
+
+    # Return the predictions
+
+    return pred
 
 # Create the web interface
 
@@ -100,12 +119,12 @@ def main():
 
     st.write('remplissez les champs pour avoir la prediction')
 
-    
+
     # Create input fields for user to enter data tc
 
     d20=st.number_input("densité à 20°C Kg/m3", min_value=0.0, format="%.3f")
     encodedd20=scaler_tc_d420.transform([[d20]])[0][0]
-    
+
     n20=st.number_input("indice de refraction à 20°C", min_value=0.0, format="%.3f")
     encodedn20=scaler_tc_n20.transform([[n20]])[0][0]
 
@@ -116,7 +135,7 @@ def main():
     encodedMM=scaler_tc_MM.transform([[MM]])[0][0]
 
     nbH=st.number_input("nombre d'hydrogène", min_value=1)
-    
+
 
     nbC=st.number_input("nombre de carbone", min_value=1)
     data_to_transform = [[nbH, nbC]]
@@ -126,10 +145,10 @@ def main():
 
     # Récupérez les valeurs transformées
     encodednbH, encodednbC = transformed_data[0][0], transformed_data[0][1]
-    
+
 
     famille=st.selectbox("choisir la famille de votre corps",["aromatiques","i-paraffines","n-paraffines","naphtènes","oléfines", "famille_alcynes"])
-    
+
         # Add more input fields as needed
 
     # Combine input features into a DataFrame
@@ -170,15 +189,87 @@ def main():
     input_data_tc=input_data_tc.drop("famille",axis=1)
 
 
- 
+
+# Create input fields for user to enter data pc
+
+    
+    encodedd20_pc=scaler_pc_d20.transform([[d20]])[0][0]
+
+    
+    encodedn20_pc=scaler_pc_n20.transform([[n20]])[0][0]
+
+    
+    encodedTb_pc=scaler_pc_tb.transform([[Tb]])[0][0]
+
+    
+    encodedMM_pc=scaler_pc_MM.transform([[MM]])[0][0]
 
     
 
+
+    
+    data_to_transform_pc = [[nbH, nbC]]
+
+    # Appliquez la transformation
+    transformed_data_pc = scaler_pc_nbHnbC.transform(data_to_transform_pc)
+
+    # Récupérez les valeurs transformées
+    encodednbH, encodednbC = transformed_data_pc[0][0], transformed_data_pc[0][1]
+
+
+    famille=st.selectbox("choisir la famille de votre corps",["aromatiques","i-paraffines","n-paraffines","naphtènes","oléfines", "famille_alcynes"])
+
+        # Add more input fields as needed
+
+    # Combine input features into a DataFrame
+
+    input_data_pc = {
+
+    'd20(Kg/m3)': [encodedd20],
+    'n20': [encodedn20],
+    'Tb(K)': [encodedTb],
+    'MM(g/mole)': [encodedMM],
+    'famille': [famille],
+    'nbH': [encodednbH],
+    'nbC': [encodednbC],
+    'Tc(K)':[0]
+
+}
+
+# Création du DataFrame
+    input_data_pc = pd.DataFrame(input_data_pc)
+
+    #encodage de famille
+
+    family =["famille_aromatiques","famille_i-paraffines","famille_n-paraffines","famille_naphtènes","famille_oléfines"]
+    for i in family:
+      input_data_pc[i]=0
+    for i in range(0,len(input_data_pc)):
+      if famille=="n-paraffines":
+        input_data_pc["famille_n-paraffines"]=1
+      elif famille=="i-paraffines":
+        input_data_pc["famille_i-paraffines"]=1
+      elif famille=="oléfines":
+        input_data_pc["famille_oléfines"]=1
+      elif famille=="alcynes":
+        continue
+      elif famille=="aromatiques":
+        input_data_pc["famille_aromatiques"]=1
+      elif famille=="naphtènes":
+        input_data_pc["famille_naphtènes"]=1
+    input_data_pc=input_data_pc.drop("famille",axis=1)
+
+
+
+
     if st.button('Predictions'):
 
-        prediction = predict_tc(input_data_tc)
+        prediction_tc = predict_tc(input_data_tc)
+        prediction_pc= predict_pc(input_data_pc,prediction_tc)
 
-        st.write('Les Predictions sont :\n\n', prediction)
+        st.write('Les Predictions sont :\n\n', prediction_tc,prediction_pc)
+
+
 
 if __name__ == '__main__':
 
