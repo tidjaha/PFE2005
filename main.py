@@ -94,7 +94,7 @@ def predict_tc(input_features_tc):
 
  #fonction pour le calcul de Pc:
 
-    def predict_pc(input_features_pc,vpc):
+def predict_pc(input_features_pc,vpc):
 
     # Perform any necessary preprocessing on the input_features
 
