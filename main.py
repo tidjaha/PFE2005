@@ -105,7 +105,7 @@ def predict_pc(input_features_pc,vpc):
     
     input_features_pc["Pc(bar)"] = model_RF_pc.predict(input_features_pc)
     st.write(input_features_pc)
-    test_pc=input_features_pc[["Pc(bars)"]].values.reshape(-1, 1)
+    test_pc=input_features_pc[["Pc(bar)"]].values.reshape(-1, 1)
     pred=scaler_pc_pc.inverse_transform(test_pc)
 
     # Return the predictions
