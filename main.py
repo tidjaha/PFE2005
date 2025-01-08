@@ -123,13 +123,13 @@ def main():
 
     # Create input fields for user to enter data tc
 
-    d20=st.number_input("densité à 20°C Kg/m3", min_value=0.0, format="%.3f")
+    d20=st.number_input("densité à 20°C Kg/m3", min_value=0.0, format="%.2f")
     encodedd20=scaler_tc_d420.transform([[d20]])[0][0]
 
-    n20=st.number_input("indice de refraction à 20°C", min_value=0.0, format="%.3f")
+    n20=st.number_input("indice de refraction à 20°C", min_value=0.0, format="%.6f")
     encodedn20=scaler_tc_n20.transform([[n20]])[0][0]
 
-    Tb=st.number_input("Température d'ébullition en °K", format="%.3f")
+    Tb=st.number_input("Température d'ébullition en °K", format="%.2f")
     encodedTb=scaler_tc_tb.transform([[Tb]])[0][0]
 
     MM=st.number_input("masse molaire en g/mol", min_value=0.0, format="%.6f")
