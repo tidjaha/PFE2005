@@ -172,7 +172,7 @@ def main():
         cp=prediction.loc[0, "Cp(J/mol K)"]
         st.write("Les Predictions sont :\n\n Tc(K) =" ,tc,"\n\n Pc(bar) =",pc ,"\n\n Vc(cm3/mol) =",vc , "\n\n Cp(J/mol K) =",cp)
 
-        st.write("Copyrights tidjaha (hamza.tidjani@yahoo.fr) \n\n Link Linkedin : https://www.linkedin.com/in/hamza-tidjani-539b78237" )
+        st.write("Copyrights tidjaha 2025 (hamza.tidjani@yahoo.fr) \n\n Link Linkedin : https://www.linkedin.com/in/hamza-tidjani-539b78237" )
 
         # URL de Google Drive (assurez-vous que c'est un lien de téléchargement direct)
         url = "https://drive.google.com/uc?export=download&id=1mdMdvXYGiowfy3UwNtMBCAllv7wt1DUT"  # Exemple d'ID
