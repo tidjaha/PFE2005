@@ -90,8 +90,8 @@ def main():
     st.write("Un résumé des propriétés critiques s'impose :")
 
     st.write("ci-dessous deux graphes explicatif des propriétés critiques")
-    st.image(courbe tc pc.jpg)
-    st.image(vc.jpg)
+    st.image("courbe tc pc.jpg")
+    st.image("vc.jpg")
     st.write("les applications sont :\n\n 1. Thermodynamique des fluides \n\n 2. Conception d'équipements industriels \n\n 3. Technologies supercritiques \n\n 4. Simulation et prédiction des mélanges \n\n 5. Transitions de phase \n\n 6. Industrie du pétrole et du gaz naturel \n\n 7. Production et transport d'énergie \n\n 8. Sécurité industrielle")
 
     st.write("ci-dessous deux graphes explicatif de la capacité calorifique à pression constante :")
