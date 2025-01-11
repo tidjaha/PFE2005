@@ -171,7 +171,22 @@ def main():
 
         st.write("Copyrights tidjaha (hamza.tidjani@yahoo.fr) \n\n Link Linkedin : https://www.linkedin.com/in/hamza-tidjani-539b78237" )
 
-        https://drive.google.com/file/d/1mdMdvXYGiowfy3UwNtMBCAllv7wt1DUT/view?usp=sharing
+        # URL de Google Drive (assurez-vous que c'est un lien de téléchargement direct)
+        url = "https://drive.google.com/uc?export=download&id=1mdMdvXYGiowfy3UwNtMBCAllv7wt1DUT"  # Exemple d'ID
+        
+        # Téléchargement du fichier avec requests
+        response = requests.get(url, stream=True)
+        
+        # Sauvegarder l'image téléchargée dans un fichier temporaire
+        image_path = "moi.jpg"
+        with open(image_path, 'wb') as file:
+            for chunk in response.iter_content(chunk_size=128):
+                file.write(chunk)
+        st.image(image_path)
+
+
+
+        #https://drive.google.com/file/d/1mdMdvXYGiowfy3UwNtMBCAllv7wt1DUT/view?usp=sharing
 
 
 
