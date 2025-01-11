@@ -166,10 +166,10 @@ def main():
 
         prediction = predict(input_data)
         
-        tc=prediction['Tc(K)']
-        pc=prediction['Pc(bar)']
-        vc=prediction['Vc(cm3/mol)']
-        cp=prediction['Cp(J/mol K)']
+        tc=prediction.loc[0, "Tc(K)"]
+        pc=prediction.loc[0, "Pc(bar)"]
+        vc=prediction.loc[0, "Vc(cm3/mol)"]
+        cp=prediction.loc[0, "Cp(J/mol K)"]
         st.write("Les Predictions sont :\n\n Tc(K) =" ,tc,"\n\n Pc(bar) =",pc ,"\n\n Vc(cm3/mol) =",vc , "\n\n Cp(J/mol K) =",cp)
 
         st.write("Copyrights tidjaha (hamza.tidjani@yahoo.fr) \n\n Link Linkedin : https://www.linkedin.com/in/hamza-tidjani-539b78237" )
