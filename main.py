@@ -17,7 +17,7 @@ import requests
 
 model_LR_tc=joblib.load("model(tc).pkl")
 
-scaler__tb = joblib.load("scaler tb.pkl")
+scaler_tb = joblib.load("scaler tb.pkl")
 scaler_tc= joblib.load("scaler tc.pkl")
 scaler_MM=joblib.load("scaler MM.pkl")
 scaler_d420=joblib.load("scaler d420.pkl")
