@@ -87,7 +87,10 @@ def main():
 
     st.title('prediction des valeurs de (Tc,Pc,Vc,Cp) pour un corps pur')
 
-    
+    st.write('Un résumé des propriétés critiques s'impose :')
+
+    st.write('ci-dessous deux graphes explicatif des propriétés critiques')
+    st.image(image_path)
 
     st.write('remplissez les champs pour avoir la prediction')
 
