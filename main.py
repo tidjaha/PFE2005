@@ -142,21 +142,21 @@ def main():
 
     family =["famille_aromatiques","famille_i-paraffines","famille_n-paraffines","famille_naphtènes","famille_oléfines"]
     for i in family:
-      input_data_tc[i]=0
-    for i in range(0,len(input_data_tc)):
+      input_data[i]=0
+    for i in range(0,len(input_data)):
       if famille=="n-paraffines":
-        input_data_tc["famille_n-paraffines"]=1
+        input_data["famille_n-paraffines"]=1
       elif famille=="i-paraffines":
-        input_data_tc["famille_i-paraffines"]=1
+        input_data["famille_i-paraffines"]=1
       elif famille=="oléfines":
-        input_data_tc["famille_oléfines"]=1
+        input_data["famille_oléfines"]=1
       elif famille=="alcynes":
         continue
       elif famille=="aromatiques":
-        input_data_tc["famille_aromatiques"]=1
+        input_data["famille_aromatiques"]=1
       elif famille=="naphtènes":
-        input_data_tc["famille_naphtènes"]=1
-    input_data_tc=input_data_tc.drop("famille",axis=1)
+        input_data["famille_naphtènes"]=1
+    input_data=input_data.drop("famille",axis=1)
 
 
 
