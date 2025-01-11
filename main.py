@@ -24,7 +24,7 @@ scaler_d420=joblib.load("scaler d420.pkl")
 scaler_n20=joblib.load("scaler n20.pkl")
 scaler_ncnh=joblib.load("scaler ncnh.pkl")
 scaler_vc=joblib.load("scaler Vc.pkl")
-scaler_pc=joblib.load("scaler pc.pkl")
+scaler_pc=joblib.load("scaler Pc.pkl")
 scaler_Cp=joblib.load("scaler Cp.pkl")
 
 model_RF_pc=joblib.load("model_RF_pc.pkl")
