@@ -64,9 +64,9 @@ def predict(input_features):
     vpc=scaler_pc.inverse_transform(output_pred[["Pc(bar)"]])
     output_pred["Pc(bar)"]=vpc
     vvc=scaler_vc.inverse_transform(output_pred[["Vc(m3/s)"]])
-    output_pred["Vc(m3/s)"]=vvc
+    output_pred["Vc(cm3/mol)"]=vvc
     vCp=scaler_Cp.inverse_transform(output_pred[["Cp(J/kg/K)"]])
-    output_pred["Cp(J/kg/K)"]=vCp
+    output_pred["Cp(J/mol K)"]=vCp
 
     # Return the predictions
 
@@ -85,7 +85,9 @@ def predict(input_features):
 
 def main():
 
-    st.title('prediction des valeurs de (Tc,Pc,Vc,Cp pour un corps pur')
+    st.title('prediction des valeurs de (Tc,Pc,Vc,Cp) pour un corps pur')
+
+    
 
     st.write('remplissez les champs pour avoir la prediction')
 
@@ -165,7 +167,11 @@ def main():
         prediction = predict(input_data)
         
 
-        st.write('Les Predictions sont :\n\n', prediction)
+        st.write('Les Predictions sont :\n\n Tc(K) =" ,prediction['Tc(K)'],"\n\n Pc(bar) =", prediction['Pc(bar)'],"\n\n Vc(cm3/mol) =", prediction['Vc(cm3/mol)'], "\n\n Cp(J/mol K) =", prediction['Cp(J/mol K)'])
+
+        st.write("Copyrights tidjaha (hamza.tidjani@yahoo.fr) \n\n Link Linkedin : https://www.linkedin.com/in/hamza-tidjani-539b78237" )
+
+        https://drive.google.com/file/d/1mdMdvXYGiowfy3UwNtMBCAllv7wt1DUT/view?usp=sharing
 
 
 
