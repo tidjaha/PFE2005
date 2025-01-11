@@ -85,19 +85,19 @@ def predict(input_features):
 
 def main():
 
-    st.title('prediction des valeurs de (Tc,Pc,Vc,Cp) pour un corps pur')
+    st.title('Prediction des valeurs de (Tc,Pc,Vc,Cp) pour un corps pur')
 
-    st.write("Un résumé des propriétés critiques s'impose :")
+    st.write("**Un résumé des propriétés critiques s'impose :**")
 
     st.write("ci-dessous deux graphes explicatif des propriétés critiques")
-    st.image("courbe tc pc.jpg")
+    st.image("courbe tc pc.jpg",width=300)
     st.image("vc.jpg")
-    st.write("les applications sont :\n\n 1. Thermodynamique des fluides \n\n 2. Conception d'équipements industriels \n\n 3. Technologies supercritiques \n\n 4. Simulation et prédiction des mélanges \n\n 5. Transitions de phase \n\n 6. Industrie du pétrole et du gaz naturel \n\n 7. Production et transport d'énergie \n\n 8. Sécurité industrielle")
+    st.write("Les applications sont :\n\n 1. Thermodynamique des fluides \n\n 2. Conception d'équipements industriels \n\n 3. Technologies supercritiques \n\n 4. Simulation et prédiction des mélanges \n\n 5. Transitions de phase \n\n 6. Industrie du pétrole et du gaz naturel \n\n 7. Production et transport d'énergie \n\n 8. Sécurité industrielle")
 
-    st.write("ci-dessous deux graphes explicatif de la capacité calorifique à pression constante :")
+    st.write("**Ci-dessous un explicatif de la capacité calorifique à pression constante (Cp) :**")
     st.write("Chaleur nécessaire : 𝐶𝑝, indique la quantité d'énergie thermique qu'il faut fournir pour augmenter la température d'un matériau ou d'un fluide à pression constante.\n\n Applications pratiques : En chimie et en physique pour étudier les réactions thermiques. En ingénierie pour concevoir des systèmes thermiques, comme les moteurs et les échangeurs de chaleur.")
     
-    st.write('remplissez les champs pour avoir la prediction')
+    st.write('**Remplissez les champs pour avoir la prediction**')
 
 
     # Create input fields for user to enter data tc
