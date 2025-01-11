@@ -48,10 +48,10 @@ def predict(input_features):
 
     # Make predictions using the loaded model
 
-    tc=model_LR_tc.predict(input_features.reshape(-1, 1))
-    pc=model_RF_pc.predict(input_features.reshape(-1, 1))
-    vc=model_LR_vc.predict(input_features.reshape(-1, 1))
-    Cp=model_LR_Cp.predict(input_features.reshape(-1, 1))  
+    tc=model_LR_tc.predict(input_features)
+    pc=model_RF_pc.predict(input_features)
+    vc=model_LR_vc.predict(input_features)
+    Cp=model_LR_Cp.predict(input_features)  
 
     output_pred=input_features.copy()
     output_pred["Tc(K)"]=tc
@@ -136,7 +136,7 @@ def main():
 }
 
 # Création du DataFrame
-    input_data_tc = pd.DataFrame(input_data)
+    input_data = pd.DataFrame(input_data)
 
     #encodage de famille
 
